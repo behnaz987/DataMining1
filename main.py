@@ -1,4 +1,5 @@
 import pandas as pd
+
 df = pd.read_excel('Real Data(1).xlsx', keep_default_na=False)
 
 
@@ -36,8 +37,14 @@ def check_unique_value(column_name):
 
 def replace(column_name, old_to_new):
     df_column = df[column_name]
-    response = df_column.replace(old_to_new, inplace=True)
-    return response
+    df_column.replace(old_to_new, inplace=True)
+    return df_column
+
+#
+# if __name__ == '__main__':
+#     friend_old_to_new = {'هفته"': 1, "هرگز !": 1, '"دوستی ندارم"': 1, 'هفته‌ای 6 بار': 5}
+#     # replace("بیرون رفتن با دوستان ", friend_old_to_new)
+#     print(replace("بیرون رفتن با دوستان ", friend_old_to_new))
 
 
 def clean_columns():
@@ -56,9 +63,11 @@ def clean_columns():
     age = clean_column("سن", 15, 23)
     return final1, second1, first1, absent_count, health_state, time_after_school, failed_count, age
 
+
 def replace_columns():
     friend_old_to_new = {'هفته"': 1, "هرگز !": 1, '"دوستی ندارم"': 1, 'هفته‌ای 6 بار': 5}
     friend = replace("بیرون رفتن با دوستان ", friend_old_to_new)
+    print(friend)
 
     quality_old_to_new = {"عالی": 4, "چهار": 4, 0: 1, '': 1}
     family = replace("کیفیت روابط خانوادگی", quality_old_to_new)
@@ -90,21 +99,21 @@ def replace_columns():
     f_m_old_to_new = {"Girl": "دختر", '"G"': "دختر", "Meal": "پسر", "M": "پسر"}
     gender = replace("جنسیت", f_m_old_to_new)
 
-    return friend, family, f_job, m_job, f_deu, life_state, child_count , house_state, gender, reason
+    return friend, family, f_job, m_job, f_deu, life_state, child_count, house_state, gender, reason
+
+
 if __name__ == '__main__':
     clean_columns()
     replace_columns()
 
-
+    # check_unique_value("بیرون رفتن با دوستان ")
     # check_unique_value("تمایل به تحصیل در مقاطع بالاتر")
     # check_unique_value("مهد کودک")
-
+    # check_unique_value("بیرون رفتن با دوستان ")
     # check_unique_value("فعالیت خارج از برنامه")
     # check_unique_value("شرکت در کلاس خصوصی")
     # check_unique_value("تعداد پایه‌های رد شده")
 
-
     # check_unique_value("سرپرست")
     # check_unique_value("زمان مطالعه هفتگی")
     # check_unique_value("زمان سفر")
-
