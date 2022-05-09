@@ -1,5 +1,6 @@
 ##################  Q5  #################
 from main import *
+r = clean_columns()
 
 
 def q_5():
@@ -11,7 +12,7 @@ def q_5():
     cnt = 0
     for i in range(0, 460):
         if df["شرکت در کلاس خصوصی"][i] == "yes":
-            if df["نمره امتحان پایانی"][i] - df["نمره در امتحان دوم"][i] >= 3:
+            if r[0][i] - r[1][i] >= 3:
                 cnt += 1
 
     progress_percentage = (cnt / count) * 100

@@ -1,11 +1,11 @@
 ##################  Q1  #################
 import matplotlib.pyplot as plt
 from main import *
-
+r = replace_columns()
 
 def parent_job(person):
-    father_job = df["شغل پدر"]
-    mother_job = df["شغل مادر"]
+    father_job = r[2]
+    mother_job = r[3]
     parent = df["سرپرست"]
     if parent[person] == "پدر":
         return father_job[person]

@@ -3,7 +3,7 @@ import pandas as pd
 from main import *
 
 df = pd.read_excel('Real Data(1).xlsx', keep_default_na=False)
-
+r = clean_columns()
 
 def q_7():
     count = {
@@ -15,9 +15,10 @@ def q_7():
         'lsf': 0
     }
     for i in range(0, 460):
-        last = final1[i]
-        second = second1[i]
-        first = first1[i]
+        last = r[0][i]
+        second = r[1][i]
+        first = r[2][i]
+
         if first >= second >= last:
             count['fsl'] += 1
         elif first >= last >= second:
