@@ -40,11 +40,6 @@ def replace(column_name, old_to_new):
     df_column.replace(old_to_new, inplace=True)
     return df_column
 
-#
-# if __name__ == '__main__':
-#     friend_old_to_new = {'هفته"': 1, "هرگز !": 1, '"دوستی ندارم"': 1, 'هفته‌ای 6 بار': 5}
-#     # replace("بیرون رفتن با دوستان ", friend_old_to_new)
-#     print(replace("بیرون رفتن با دوستان ", friend_old_to_new))
 
 
 def clean_columns():
@@ -115,3 +110,5 @@ if __name__ == '__main__':
     # check_unique_value("سرپرست")
     # check_unique_value("زمان مطالعه هفتگی")
     # check_unique_value("زمان سفر")
+
+# این ستون ها چک شده و نیازی به clean  شدن نذارند
