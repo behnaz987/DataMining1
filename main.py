@@ -67,7 +67,6 @@ def clean_columns():
 def replace_columns():
     friend_old_to_new = {'هفته"': 1, "هرگز !": 1, '"دوستی ندارم"': 1, 'هفته‌ای 6 بار': 5}
     friend = replace("بیرون رفتن با دوستان ", friend_old_to_new)
-    print(friend)
 
     quality_old_to_new = {"عالی": 4, "چهار": 4, 0: 1, '': 1}
     family = replace("کیفیت روابط خانوادگی", quality_old_to_new)
@@ -106,7 +105,6 @@ if __name__ == '__main__':
     clean_columns()
     replace_columns()
 
-    # check_unique_value("بیرون رفتن با دوستان ")
     # check_unique_value("تمایل به تحصیل در مقاطع بالاتر")
     # check_unique_value("مهد کودک")
     # check_unique_value("بیرون رفتن با دوستان ")

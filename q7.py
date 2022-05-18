@@ -40,3 +40,5 @@ def q_7():
 
 if __name__ == '__main__':
     q_7()
+
+#     f = first , s = second , l = last
